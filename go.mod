@@ -1,4 +1,4 @@
-module golang-kubernetes
+module go-kubernetes
 
 go 1.17
 
