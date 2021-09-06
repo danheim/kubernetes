@@ -1,8 +1,15 @@
 package main
 
-import "net/http"
+import (
+	"github.com/sirupsen/logrus"
+	"github.com/takama/router"
+)
+
+var log = logrus.New()
 
 func main() {
-	http.HandleFunc("/", home)
-	http.ListenAndServe(":8000", nil)
+	r := router.New()
+	r.Logger = logger
+	r.GET("/", home)
+	r.Listen(":8000")
 }
